@@ -14,13 +14,6 @@ Aplikaciju mozete preuzeti na sledecem [linku](http://softeng.pmf.kg.ac.rs:10051
 
 Lozinka za pristup je `123passwd123`
 
-## Example accounts
-
-- filip_bojovic : Sifra123
-- filip_andric : Sifra123
-
-Mejlovi su isti kao na teamsu
-
 ## App Functionality
 
 ### Obavezne funkcionalnosti
