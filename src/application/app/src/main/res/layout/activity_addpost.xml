@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerHorizontal="true"
+    tools:context=".Activities.ActivityAddPost"
+    android:background="#d4e9e4"
+    android:orientation="vertical">
+
+    <io.ak1.BubbleTabBar
+        android:id="@+id/bubbleTabBarTopEditProfile"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/light_blue"
+        android:elevation="16dp"
+        android:padding="3dp"
+        app:bubbletab_horizontal_padding="20dp"
+        app:bubbletab_title_size="16sp"
+        app:bubbletab_icon_padding="5sp"
+        app:bubbletab_vertical_padding="10dp"
+        app:bubbletab_tab_corner_radius="25dp">
+        <Button
+            android:id="@+id/backButton"
+            android:padding="0dp"
+            android:drawableLeft="@drawable/ic_arrow_back"
+            android:background="@color/transparent"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp">
+        </Button>
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/whitelogo"
+            android:layout_marginTop="4dp" />
+    </io.ak1.BubbleTabBar>
+
+    <ImageView
+        android:id="@+id/previewPic"
+        android:layout_width="wrap_content"
+        android:layout_height="280dp"
+        android:src="@drawable/defaultpicture"
+        android:layout_margin="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/bubbleTabBarTopEditProfile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/addPicWarning"
+        android:layout_width="300sp"
+        android:layout_height="wrap_content"
+        android:text="You're not allowed to post a picture with yourself in it"
+        android:textSize="15sp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/previewPic"/>
+
+    <Button
+        android:id="@+id/addPicture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/light_blue"
+        android:text="Choose picture"
+        android:onClick="pickPhotoFromGallery"
+        android:layout_marginTop="10dp"
+        app:icon="@drawable/dodajsliku_smaller"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addPicWarning">
+
+    </Button>
+
+    <RelativeLayout
+        android:id="@+id/formaKomentar"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape"
+        android:paddingBottom="40dp"
+        app:layout_constraintBottom_toTopOf="@id/btnAddPost"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addPicture">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/locationWrap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:textColorHint="@color/dark_blue"
+            app:boxBackgroundColor="@color/light_blue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <EditText
+                android:id="@+id/editLocationSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:hint="Location"
+                android:textColor="@color/light_text" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/captionWrap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/locationWrap"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:textColorHint="@color/dark_blue"
+            app:boxBackgroundColor="@color/light_blue">
+
+            <EditText
+                android:id="@+id/editCaptionSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Caption"
+                android:inputType="text"
+                android:textColor="@color/light_text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btnAddPost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/light_blue"
+        android:layout_marginTop="10dp"
+        android:text="Add post"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/formaKomentar">
+
+    </Button>
+</androidx.constraintlayout.widget.ConstraintLayout>

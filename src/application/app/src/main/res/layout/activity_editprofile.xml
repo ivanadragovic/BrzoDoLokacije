@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerHorizontal="true"
+    tools:context=".Activities.ActivityEditProfile"
+    android:background="#d4e9e4"
+    android:orientation="vertical">
+
+    <io.ak1.BubbleTabBar
+        android:id="@+id/bubbleTabBarTopEditProfile"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/light_blue"
+        android:elevation="16dp"
+        android:padding="3dp"
+        app:bubbletab_horizontal_padding="20dp"
+        app:bubbletab_title_size="16sp"
+        app:bubbletab_icon_padding="5sp"
+        app:bubbletab_vertical_padding="10dp"
+        app:bubbletab_tab_corner_radius="25dp">
+        <Button
+            android:id="@+id/backButton"
+            android:padding="0dp"
+            android:drawableLeft="@drawable/ic_arrow_back"
+            android:background="@color/transparent"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp">
+        </Button>
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/whitelogo"
+            android:layout_marginTop="4dp" />
+    </io.ak1.BubbleTabBar>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/editProfilePicture"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/nopfp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bubbleTabBarTopEditProfile"/>
+
+    <TextView
+        android:id="@+id/changePhotoLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="pickPhoto"
+        android:text="@string/change_pfp"
+        android:textColor="@color/dark_blue"
+        android:textSize="18dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editProfilePicture" />
+
+    <TextView
+        android:id="@+id/profilePicWarning"
+        android:layout_width="300sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Profile picture must be in a form of an ID photo containing only one person"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/changePhotoLink"/>
+
+    <Button
+        android:id="@+id/saveChangesProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/light_blue"
+        android:text="Save changes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/formaEdita">
+
+    </Button>
+
+    <RelativeLayout
+        android:id="@+id/formaEdita"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape"
+        android:paddingBottom="40dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/saveChangesProfile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profilePicWarning">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/nameAndSurnameWrap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="20dp"
+            android:textColorHint="@color/dark_blue"
+            app:boxBackgroundColor="@color/light_blue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <EditText
+                android:id="@+id/editNameProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Name"
+                android:inputType="text"
+                android:textColor="@color/light_text" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/usernameEditProfileWrap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nameAndSurnameWrap"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="20dp"
+            android:textColorHint="@color/dark_blue"
+            app:boxBackgroundColor="@color/light_blue">
+
+            <EditText
+                android:id="@+id/editUsernameProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Username"
+                android:inputType="text"
+                android:textColor="@color/light_text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/captionEditProfileWrap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/usernameEditProfileWrap"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="20dp"
+            android:textColorHint="@color/dark_blue"
+            app:boxBackgroundColor="@color/light_blue">
+
+            <EditText
+                android:id="@+id/editDescriptionProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Description"
+                android:inputType="text"
+                android:textColor="@color/light_text" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imageViewMountains"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:layout_alignParentBottom="true"
+        android:padding="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="-50dp"
+        app:srcCompat="@drawable/mountains" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
